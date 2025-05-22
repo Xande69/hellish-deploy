@@ -1,21 +1,20 @@
-// Logo temporariamente comentada para evitar erro de build
-// <Image
-//   src="/images/hellish-monday-logo.png"
-//   alt="Hellish Monday Logo"
-//   width={360}
-//   height={180}
-//   className="mb-4"
-//   priority
-// />
+// index.jsx — Hellish Monday™ 100% Vercel-ready
 
-import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
-import { Flame, Sparkles, DollarSign, Meh } from "lucide-react";
+function Card({ children, className }) {
+  return (
+    <div className={`rounded-2xl border border-zinc-800 bg-zinc-900 p-4 shadow-md transition-all ${className || ""}`}>
+      {children}
+    </div>
+  );
+}
+
+function CardContent({ children, className }) {
+  return <div className={`p-6 ${className || ""}`}>{children}</div>;
+}
 
 function BrandTitle() {
   return (
     <div className="flex flex-col items-center">
-      {/* LOGO DESATIVADA TEMPORARIAMENTE */}
       <h1 className="text-6xl font-extrabold tracking-widest">HELLISH MONDAY™</h1>
     </div>
   );
@@ -56,10 +55,10 @@ export default function HellishMondayPitch() {
       <HeroSection />
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="bg-zinc-900 border border-zinc-800 shadow-md transition-all hover:scale-[1.01] hover:border-red-500">
-          <CardContent className="p-6">
+        <Card className="hover:scale-[1.01] hover:border-red-500">
+          <CardContent>
             <h2 className="text-3xl font-bold mb-2 flex items-center gap-2 text-red-400">
-              <Flame /> O Problema
+              🔥 O Problema
             </h2>
             <p className="text-zinc-400">
               O mundo está saturado de positividade tóxica, produtividade simulada e autoconhecimento de Instagram. As pessoas querem rir do colapso... mas com estilo e entrega rápida.
@@ -67,10 +66,10 @@ export default function HellishMondayPitch() {
           </CardContent>
         </Card>
 
-        <Card className="bg-zinc-900 border border-zinc-800 shadow-md transition-all hover:scale-[1.01] hover:border-yellow-400">
-          <CardContent className="p-6">
+        <Card className="hover:scale-[1.01] hover:border-yellow-400">
+          <CardContent>
             <h2 className="text-3xl font-bold mb-2 flex items-center gap-2 text-yellow-400">
-              <Sparkles /> A Solução
+              ✨ A Solução
             </h2>
             <p className="text-zinc-400">
               HELLISH MONDAY™ converte desespero moderno em produtos físicos e digitais. Roupas, cursos, assinaturas, tudo temperado com sarcasmo clínico e design que julga o cliente.
@@ -80,24 +79,24 @@ export default function HellishMondayPitch() {
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="bg-zinc-800 border border-zinc-700 hover:border-pink-500 hover:scale-[1.02] transition-all">
-          <CardContent className="p-6">
+        <Card className="hover:border-pink-500 hover:scale-[1.02]">
+          <CardContent>
             <h3 className="text-xl font-bold mb-2">Planner do Caos™</h3>
             <p className="text-zinc-400 text-sm">
               Edição limitada com frases inéditas em cada página, escritas para julgar silenciosamente suas falhas. Páginas que não te ajudam. Elas só observam. Como sua ex.
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-zinc-800 border border-zinc-700 hover:border-cyan-500 hover:scale-[1.02] transition-all">
-          <CardContent className="p-6">
+        <Card className="hover:border-cyan-500 hover:scale-[1.02]">
+          <CardContent>
             <h3 className="text-xl font-bold mb-2">Camiseta "CEO de Nada"™</h3>
             <p className="text-zinc-400 text-sm">
               Farda oficial da autossabotagem profissional. Tecido 100% algodão, 0% esperança. Estampa minimalista com frases que não motivam, só constatam.
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-zinc-800 border border-zinc-700 hover:border-purple-500 hover:scale-[1.02] transition-all">
-          <CardContent className="p-6">
+        <Card className="hover:border-purple-500 hover:scale-[1.02]">
+          <CardContent>
             <h3 className="text-xl font-bold mb-2">Caixa da Angústia™</h3>
             <p className="text-zinc-400 text-sm">
               Assinatura mensal: brindes inúteis + bilhetes passivo-agressivos + um adesivo que diz "não fale comigo". Cada edição vem com um item surpresa desconfortável — tipo um botão que não faz nada.
@@ -107,10 +106,10 @@ export default function HellishMondayPitch() {
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="bg-zinc-900 border border-zinc-800 shadow-md hover:border-green-500 hover:scale-[1.01] transition-all">
-          <CardContent className="p-6">
+        <Card className="hover:border-green-500 hover:scale-[1.01]">
+          <CardContent>
             <h2 className="text-3xl font-bold mb-2 flex items-center gap-2 text-green-500">
-              <DollarSign /> Modelo de Negócio
+              💸 Modelo de Negócio
             </h2>
             <p className="text-zinc-400">
               E-commerce sarcástico, clube de assinatura de angústia curada, colaborações com influenciadores fracassados e conteúdo de autoironia premium. Lucro na frustração. Escalabilidade do desespero.
@@ -118,13 +117,13 @@ export default function HellishMondayPitch() {
           </CardContent>
         </Card>
 
-        <Card className="bg-zinc-900 border border-zinc-800 shadow-md hover:border-purple-400 hover:scale-[1.01] transition-all">
-          <CardContent className="p-6">
+        <Card className="hover:border-purple-400 hover:scale-[1.01]">
+          <CardContent>
             <h2 className="text-3xl font-bold mb-2 flex items-center gap-2 text-purple-500">
-              <Meh /> Por Que Vai Dar Certo
+              😐 Por Que Vai Dar Certo
             </h2>
             <p className="text-zinc-400">
-              Porque o mundo já está errado. A Hellish Monday™ apenas empacota o colapso com fonte serifada e código de desconto. Clientes amam se odiar. 83% das pessoas entre 25 e 45 anos se identificam com o sentimento de fracasso produtivo e 9 em cada 10 consumidores comprariam algo que representa sua frustração cotidiana. Estamos aqui para vender exatamente isso — com humor, estética e boleto.
+              Porque o mundo já está errado. A Hellish Monday™ apenas empacota o colapso com fonte serifada e código de desconto. Clientes amam se odiar. Estamos aqui para vender exatamente isso — com humor, estética e boleto.
             </p>
           </CardContent>
         </Card>
